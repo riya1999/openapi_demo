@@ -77,6 +77,10 @@ class _PetViewState extends State<PetView> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Center(child: Text('Home Page')),
+        backgroundColor: Colors.blue,
+      ),
       body: Obx(
         () => petViewModel.isLoading.isTrue
             ? Center(
@@ -93,8 +97,8 @@ class _PetViewState extends State<PetView> with WidgetsBindingObserver {
                           // Wait for the result from PetUpdateScreen
                           Pet? updatedPet = await Get.to(
                                 () => PetUpdateScreen(
-                              petName: petViewModel.petList[index].name.toString(),
-                              petID: petViewModel.petList[index].id.toString(),
+                              petName: 'PetName: ${petViewModel.petList[index].name.toString()}',
+                              petID: 'PetID: ${petViewModel.petList[index].id.toString()}',
                             ),
                           );
 
@@ -111,8 +115,9 @@ class _PetViewState extends State<PetView> with WidgetsBindingObserver {
                         },
                         child: customListTile(
                             context,
-                            petViewModel.petList[index].id.toString(),
-                            petViewModel.petList[index].name.toString()),
+                            'PetId: ${petViewModel.petList[index].id.toString()}',
+                            'PetName: ${petViewModel.petList[index].name.toString()}'
+                        ),
                       ));
                 }),
       ),

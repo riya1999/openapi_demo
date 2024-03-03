@@ -31,6 +31,7 @@ class _PetUpdateScreenState extends State<PetUpdateScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Update Data'),
+        backgroundColor: Colors.blue,
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
